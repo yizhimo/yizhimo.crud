@@ -1,0 +1,104 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/public/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">一只馍管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">表格</a></li>
+            <li><a href="#">设置</a></li>
+            <li><a href="#">简介</a></li>
+            <li><a href="#">帮助</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="搜索">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">无敌的大大 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">狗大牙</a></li>
+            <li><a href="#">狗熊猫</a></li>
+            <li><a href="#">狗校长</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">哈哈哈</a></li>
+            <li><a href="">嘻嘻嘻</a></li>
+            <li><a href="">呵呵呵</a></li>
+            <li><a href="">嘿嘿嘿</a></li>
+            <li><a href="">更多</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">概述</a></li>
+            <li><a href="">报告</a></li>
+            <li><a href="">分析</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">添加学生</h2>
+          <!-- 请求方式 -->
+          <form action="/students/edit" method="post">
+            <!-- 隐藏不希望用户看见,但要提交到服务端得数据 -->
+            <input type="hidden" value="{{students.id}}" name="id">
+            <div class="form-group">
+              <label for="">姓名</label>
+                                                                        <!-- 确定值 -->
+              <input type="text" class="form-control" id="" name="name" value="{{students.name}}">
+            </div>
+            <div class="form-group">
+              <label for="">性别</label>
+              <div>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" id="" value="男" checked> 男
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" id="" value="女"> 女
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">年龄</label>
+              <input type="number" class="form-control" id="" name="age" value="{{students.age}}">
+            </div>
+            <div class="form-group">
+                <label for="">爱好</label>
+                <input type="text" class="form-control" id="" name="hobbies" value="{{students.hobbies}}">
+            </div>
+            <button type="submit" class="btn btn-default">提交</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
